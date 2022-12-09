@@ -1,1 +1,7 @@
-<p>book works!</p>
+<p>Sección book works!</p>
+<p> Nombre : {{ name }} </p>
+<p> Autor  : {{ author }} </p>
+<p> Año    : {{ year  }} </p>
+<p> Edición : {{ edition }} </p>
+<p> Disponible : {{  getavailableUnits() + 50 }} </p>
+<p> Está disponible : {{  getavailableUnits()>0 ? "Si" : "No" }} </p>
