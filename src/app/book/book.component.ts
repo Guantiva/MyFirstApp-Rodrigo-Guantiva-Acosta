@@ -11,8 +11,16 @@ export class BookComponent {
   year = 1910
   edition = 10
   private availableUnits = 10
+  borrowerName = ""
+  isDisabled = false
 
   getavailableUnits(){
    return this.availableUnits;  
   } 
+
+  sendData(){
+    alert ("Se ha enviado la data")
+    }
+    
+
 }

@@ -1,7 +1,7 @@
 <span>{{ title }} app is running!</span><br>
 <span>{{ greating }}</span>
 <span>{{ name }}</span>
-<app-books></app-books>
-<app-book></app-book>
+<app-books [books]="Rootbooks"></app-books>
+<app-new-book (createBookEvent)="createBook($event)"></app-new-book>
 
      

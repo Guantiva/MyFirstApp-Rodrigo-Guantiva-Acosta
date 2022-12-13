@@ -1,0 +1,25 @@
+<h2>{{title}}}}</h2>
+<form>
+    <input type="text" name="name" [(ngModel)]="inputName">
+    <input type="text" name="author" [(ngModel)]="inputAuthor">
+    <input type="text" name="author" [(ngModel)]="inputGenre">    
+    <input type="submit" (click)="addBook()" value="Añadir libro">
+</form>
+<br>
+
+
+<ng-template *ngIf="hasRegistered">
+    <p>Libro registrado: {{ inputName}} {{ inputAuthor}} </p>
+  </ng-template>
+    
+  <p *ngIf="hasRegistered; else thenElse">
+      <p>Libro registrado:{{ inputName}} {{ inputAuthor}}</p>
+      <span [ngStyle]= "{color: (inputGenre=='Fantasia')? 'red':''}" > 
+          {{inputGenre}}
+     </span>
+  
+   <ng-template #thenElse>
+        <p>Por favor dilegenciar libro !!!</p>
+  </ng-template>          
+  
+  

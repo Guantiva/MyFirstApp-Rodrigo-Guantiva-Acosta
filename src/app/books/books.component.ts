@@ -1,5 +1,5 @@
 
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector : "app-books",
@@ -8,4 +8,21 @@ import { Component } from "@angular/core";
   })
   
   export class Bookscomponent { 
+
+    @Input() books: Book[] = []
+
   }
+
+  interface Book{
+    author:string
+    name :string
+    genre :string
+   }
+   
+   
+
+
+  
+
+
+

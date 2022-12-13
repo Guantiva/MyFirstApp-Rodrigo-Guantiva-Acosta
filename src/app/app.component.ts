@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IBook } from './models/book.model'
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,36 @@ export class AppComponent {
   greating = ' Hola : ';
   name     = ' Rodrigo Guantiva Acosta ';
 
+  Rootbooks: IBook[]= [
+    {
+      name: "Quijote",
+      author:"Cervantes",
+      genre: "Novela"
+    },
+    {
+      name: "100 años de soledad",
+      author:"Marquez",
+      genre: "Novela"
+    },
+    {
+      name: "El señor de los anillos",
+      author:"Tolkien",
+      genre: "Fantasia"
+    }
+ ]
+  /* 
+    La función crear libro recibe newBook del evento 
+    emitido por el hijo: createBookEvent
+  */
+    createBook(newBook: IBook) {
+      this.Rootbooks.push(newBook)
+    } 
 }
+
+interface Book{
+  author:string
+  name :string
+  genre :string
+ }
+ 
+ 

@@ -3,5 +3,22 @@
 <p> Autor  : {{ author }} </p>
 <p> Año    : {{ year  }} </p>
 <p> Edición : {{ edition }} </p>
+<!-- Mostrar información con interpolación-->
 <p> Disponible : {{  getavailableUnits() + 50 }} </p>
 <p> Está disponible : {{  getavailableUnits()>0 ? "Si" : "No" }} </p>
+<!--
+<p> Quien lo tiene prestado : {{  #borrowerName }} </p>
+-->
+<p> Quien lo tiene prestado : {{  borrowerName }} </p>
+
+<!--  Expresión
+    <input type="text"  #borrowerName (keyup) = "0" [disabled]= "getavailableUnits()==0"
+
+-->
+<!-- Two Binding combinación de ambos -->
+<input type="text"  [disabled]= "getavailableUnits()==0" [(ngModel)]="borrowerName"/>
+<!-- Evento del usario -->
+<input type="button" value="Enviar" 
+(click)="sendData()"/>
+
+
